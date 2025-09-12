@@ -1,0 +1,16 @@
+header {
+  border-bottom: 1px solid #e7e7e7;
+}
+
+.cart {
+  cursor: default;
+  border-bottom: solid 5px #FF6E00;
+}
+
+.cart:hover .inactive {
+  display: block;
+}
+
+.cart:hover .active {
+  display: none;
+}

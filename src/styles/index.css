@@ -1,0 +1,131 @@
+main {
+  margin: 0 auto;
+}
+
+.newCards {
+  background-color: #111111;
+  width: 100%;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.newCards .centerBlock {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 20px;
+  padding: 40px 16px;
+}
+
+.newCards .description {
+  display: flex;
+  flex-direction: column;
+}
+
+.newCards .description h2 {
+  font-size: 60px;
+  font-weight: 600;
+  font-family: 'Bebas';
+  color: #FF6E00;
+}
+
+.newCards .description p {
+  font-size: 20px;
+  line-height: 160%;
+}
+
+.allCards h2 {
+  font-size: 40px;
+  font-weight: 600;
+  margin: 40px 0 20px 0;
+  font-family: 'Bebas';
+}
+
+.newCards .cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.newCards .card button {
+  background-color: #111111;
+}
+
+.allCards {
+  padding: 0 16px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.allCards .cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  max-width: 400px;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card .description {
+  margin: 6px 0 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin: 0;
+  font-weight: 400;
+}
+
+.card button {
+  border: 1px solid #FF6E00;
+  color: #FF6E00;
+  background-color: white;
+  padding: 8px 0;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 550;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #FF6E00;
+  color: white;
+}
+
+.card .price {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.card .description p {
+  font-size: 14px;
+  color: #8a8a8a;
+}
+
+@media (max-width: 1100px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 550px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
