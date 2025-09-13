@@ -30,7 +30,7 @@ function renderCartBlock() {
   if (!cartBlock) return;
 
   if (Object.keys(cart).length === 0) {
-    cartBlock.innerHTML = "<p>Корзина пуста</p>";
+    cartBlock.innerHTML = "<p class='cartTotal'>Корзина пуста</p>";
     return;
   }
 
@@ -39,24 +39,25 @@ function renderCartBlock() {
       ([id, item]) => `
       <div class="cartItem" data-id="${id}">
         <img src='../imges/img-${id}.jpg'/>
-        <span class="cartName">${item.name}</span>
-        <span class="cartAuthor">${item.author}</span>
-        <span class="cartPrice">$${item.price.toFixed(2)}</span>
-        <div class="cartControls">
-          <button class="cartDecrease">-</button>
-          <span class="cartAmount">${item.amount}</span>
-          <button class="cartIncrease">+</button>
+        <div class='content'>
+          <div class='description'>
+            <h2>${item.name}</h2>
+            <p class="cartAuthor">${item.author}</p>
+          </div>
+          <p class="total">$${(item.price * item.amount).toFixed(2)}</p>
+          <div class="cartControls">
+            <button class="cartDecrease">-</button>
+            <span>${item.amount}</span>
+            <button class="cartIncrease">+</button>
+          </div>
         </div>
-        <span class="cartItemTotal">$${(item.price * item.amount).toFixed(2)}</span>
       </div>
     `
     )
     .join("");
 
   let totalHTML = `
-    <div class="cartTotal">
-      <strong>Итого: $${getCartSum().toFixed(2)}</strong>
-    </div>
+    <p class="cartTotal">Итого: $${getCartSum().toFixed(2)}</p>
   `;
 
   cartBlock.innerHTML = itemsHTML + totalHTML;

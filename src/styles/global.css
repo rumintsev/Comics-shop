@@ -26,6 +26,10 @@ body {
   margin: 0;
 }
 
+main {
+  min-height: calc(100vh - 242px);
+}
+
 header {
   display: flex;
   align-items: center;
