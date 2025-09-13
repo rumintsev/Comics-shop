@@ -71,19 +71,12 @@ nav a:hover {
   color: #FF6E00;
 }
 
-.cart:hover .inactive {
-  display: none;
-}
-
-.cart:hover .active {
-  display: block;
-}
-
 .disabled:hover {
   color: black;
 }
 
 .cart {
+  display: flex;
   align-items: center;
   gap: 6px;
   margin-left: auto;
@@ -92,6 +85,14 @@ nav a:hover {
 .cart img {
   height: 20px;
   width: 20px;
+}
+
+.cart:hover .inactive {
+  display: none;
+}
+
+.cart:hover .active {
+  display: block;
 }
 
 footer {

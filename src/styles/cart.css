@@ -14,3 +14,19 @@ header {
 .cart:hover .active {
   display: none;
 }
+
+.cartBlock {
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cartItem {
+  display: flex;
+}
+.cartItem img{
+  height: 190px;
+}
