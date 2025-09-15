@@ -51,8 +51,8 @@ function renderCartBlock() {
 
   let total = `
     <div class='cartTotal'
-      <p>Итого: $${Object.values(cart).reduce((sum, item) => sum + item.price * item.amount, 0).toFixed(2)}</p>
-      <button class='orderButton'>Оформить заказ</button>
+      <p>Total: $${Object.values(cart).reduce((sum, item) => sum + item.price * item.amount, 0).toFixed(2)}</p>
+      <button class='orderButton'>Place an order</button>
     </div>
   `;
 
