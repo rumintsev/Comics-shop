@@ -36,12 +36,13 @@ function renderCartBlock() {
             <h2>${item.name}</h2>
             <p class="cartAuthor">${item.author}</p>
           </div>
-          <p class="total">$${(item.price * item.amount).toFixed(2)}</p>
           <div class="cartControls">
             <button class="cartDecrease">-</button>
             <span>${item.amount}</span>
             <button class="cartIncrease">+</button>
           </div>
+          <p class="total">$${(item.price * item.amount).toFixed(2)}</p>
+          <button class='cross'>×</button>
         </div>
       </div>
     `
@@ -57,6 +58,17 @@ function renderCartBlock() {
 
   cartBlock.innerHTML = comics + total;
 
+  document.querySelector(".orderButton").addEventListener("click", () => {
+    document.querySelector(".form").style.display = "block";
+    document.querySelector(".formMessage").style.display = "none";
+  });
+
+  document.querySelector(".form").addEventListener("submit", (e) => {
+    e.preventDefault();
+    document.querySelector(".formMessage").style.display = "block";
+    document.querySelector(".form").style.display = "none";
+  });
+
   document.querySelectorAll(".cartItem").forEach(cartItem => {
     const id = cartItem.dataset.id;
 
@@ -71,6 +83,12 @@ function renderCartBlock() {
       if (cart[id].amount <= 0) {
         delete cart[id];
       }
+      saveCart();
+      updateCartCount();
+    });
+
+    cartItem.querySelector(".cross").addEventListener("click", () => {
+      delete cart[id];
       saveCart();
       updateCartCount();
     });

@@ -15,7 +15,6 @@
     <h1>COMICS SHOP</h1>
     <nav>
       <a href="./index.htm">Comics</a>
-      <a>Characters</a>
       <a class="cart">
         <img src="../svg/cart.svg" class="inactive" />
         <img src="../svg/cartActive.svg" class="active" />
@@ -27,6 +26,14 @@
   <main>
     <div class="cartBlock">
     </div>
+    <form class="form">
+      <input name="firstName" type="text" required autocomplete="given-name" placeholder="Имя">
+      <input name="lastName" type="text" required autocomplete="family-name" placeholder="Фамилия">
+      <input name="address" type="text" required autocomplete="street-address" placeholder="Улица, дом, квартира">
+      <input name="phone" type="tel" required autocomplete="tel" placeholder="+7 (___) ___-__-__">
+      <button type="submit" class="sendForm">Создать заказ</button>
+    </form>
+    <p class="formMessage">Заказ создан!</p>
   </main>
 
   <footer>
