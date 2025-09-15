@@ -83,10 +83,22 @@ header {
 }
 
 .cartTotal {
+  display: flex;
+  align-items: center;
   font-size: 20px;
   font-weight: 500;
   background-color: #111111;
   padding: 20px;
   border-radius: 10px;
   color: white;
+}
+.cartTotal button{
+  margin-left: auto;
+  border: none;
+  background: white;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
 }

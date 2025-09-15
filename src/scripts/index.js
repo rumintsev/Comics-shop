@@ -4,16 +4,8 @@ function saveCart() {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-function getCartTotal() {
-  return Object.values(cart).reduce((sum, item) => sum + item.amount, 0);
-}
-
-function getCartSum() {
-  return Object.values(cart).reduce((sum, item) => sum + item.price * item.amount, 0);
-}
-
 function updateCartCount() {
-  const total = getCartTotal();
+  const total = Object.values(cart).reduce((sum, item) => sum + item.amount, 0);
   const countSpan = document.querySelector(".cartCount");
 
   if (total > 0) {
@@ -34,7 +26,7 @@ function renderCartBlock() {
     return;
   }
 
-  let itemsHTML = Object.entries(cart)
+  let comics = Object.entries(cart)
     .map(
       ([id, item]) => `
       <div class="cartItem" data-id="${id}">
@@ -56,16 +48,15 @@ function renderCartBlock() {
     )
     .join("");
 
-  let totalHTML = `
-    <p class="cartTotal">Итого: $${getCartSum().toFixed(2)}</p>
+  let total = `
+    <div class='cartTotal'
+      <p>Итого: $${Object.values(cart).reduce((sum, item) => sum + item.price * item.amount, 0).toFixed(2)}</p>
+      <button class='orderButton'>Оформить заказ</button>
+    </div>
   `;
 
-  cartBlock.innerHTML = itemsHTML + totalHTML;
+  cartBlock.innerHTML = comics + total;
 
-  addCartBlockListeners();
-}
-
-function addCartBlockListeners() {
   document.querySelectorAll(".cartItem").forEach(cartItem => {
     const id = cartItem.dataset.id;
 
@@ -133,7 +124,7 @@ function addAddToCartListener(cardDiv) {
     const id = cardDiv.dataset.id;
     const name = cardDiv.dataset.name;
     const author = cardDiv.dataset.author;
-    const price = Number(cardDiv.dataset.price.replace(/[^0-9.]/g, "")); // преобразуем "$2.25" → 2.25
+    const price = Number(cardDiv.dataset.price.replace(/[^0-9.]/g, ""));
 
     if (!cart[id]) {
       cart[id] = { name, author, price, amount: 1 };
