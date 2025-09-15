@@ -67,7 +67,6 @@ main {
 }
 
 .card {
-  max-width: 400px;
   height: auto;
   transition: transform 0.2s ease;
 }
@@ -133,14 +132,12 @@ main {
   min-width: 70px;
 }
 
-@media (max-width: 1100px) {
-  main {
-    grid-template-columns: repeat(3, 1fr);
+@media (max-width: 932px) {
+  .newCards .centerBlock {
+    grid-template-columns: repeat(1, 1fr);
   }
-}
 
-@media (max-width: 550px) {
-  main {
+  .allCards .cards {
     grid-template-columns: repeat(2, 1fr);
   }
 }

@@ -168,3 +168,37 @@ form button {
   font-size: 18px;
   font-weight: 500;
 }
+
+@media (max-width: 932px) {
+  .cartItem img {
+    height: 190px;
+  }
+
+  .cartItem .content {
+    grid-template-columns: 1fr;
+  }
+
+  .cartItem .content .cross {
+    display: flex;
+    justify-content: center;
+    grid-row: 1;
+    text-align: start;
+    margin: -3px 0 15px 0;
+    background-color: #f1f1f1;
+    padding: 2px;
+    border-radius: 5px;
+    width: 28px;
+    font-size: 20px;
+  }
+
+  .cartItem .content .total {
+    grid-row: 3;
+    text-align: start;
+    margin: 0 0 5px 0;
+  }
+
+  .cartItem .content .cartControls {
+    grid-row: 4;
+    margin: 10px 0;
+  }
+}
