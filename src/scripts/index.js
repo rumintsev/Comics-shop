@@ -30,7 +30,7 @@ function renderCartBlock() {
     .map(
       ([id, item]) => `
       <div class="cartItem" data-id="${id}">
-        <img src='../imges/img-${id}.jpg'/>
+        <img src='../imges/img-${id}.webp'/>
         <div class='content'>
           <div class='description'>
             <h2>${item.name}</h2>
