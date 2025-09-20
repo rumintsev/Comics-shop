@@ -67,6 +67,9 @@ function renderCartBlock() {
     e.preventDefault();
     document.querySelector(".formMessage").style.display = "block";
     document.querySelector(".form").style.display = "none";
+    cart = {};
+    saveCart();
+    updateCartCount();
   });
 
   document.querySelectorAll(".cartItem").forEach(cartItem => {
