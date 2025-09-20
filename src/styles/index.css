@@ -123,6 +123,7 @@ main {
 .counter {
   display: flex;
   align-items: center;
+  margin-top: auto;
 }
 
 .counter span {
