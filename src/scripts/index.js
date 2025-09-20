@@ -22,7 +22,7 @@ function renderCartBlock() {
   if (!cartBlock) return;
 
   if (Object.keys(cart).length === 0) {
-    cartBlock.innerHTML = "<p class='cartTotal'>Корзина пуста</p>";
+    cartBlock.innerHTML = "<p class='cartTotal'>The cart is empty</p>";
     return;
   }
 
