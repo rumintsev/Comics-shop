@@ -27,7 +27,8 @@ body {
 }
 
 main {
-  min-height: calc(100vh - 242px);
+  min-height: calc(100vh - 262px);
+  /* header 71 + footer 131 + footer margin 40 + header margin 20*/
 }
 
 header {
